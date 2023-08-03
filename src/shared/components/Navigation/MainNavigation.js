@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import MainHeader from "./MainHeader";
@@ -16,9 +16,9 @@ const MainNavigation = (props) => {
     return (
         <React.Fragment>
             {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
-            {drawerIsOpen && (<SideDrawer className="main-navigation__drawer-nav">
+            <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler} className="main-navigation__drawer-nav">
                 <NavLinks />
-            </SideDrawer>)}
+            </SideDrawer>
             <MainHeader>
                 <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
                     <span></span>
